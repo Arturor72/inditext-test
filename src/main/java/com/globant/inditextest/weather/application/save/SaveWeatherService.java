@@ -6,4 +6,6 @@ public interface SaveWeatherService {
 
   public void saveWeather(Meteorologic meteorologic);
 
+  public boolean existsWeather(Long id);
+
 }

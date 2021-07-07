@@ -7,7 +7,9 @@ import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalData
 import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 
 @Service
 public class SaveWeatherServiceImpl implements SaveWeatherService{
@@ -21,6 +23,11 @@ public class SaveWeatherServiceImpl implements SaveWeatherService{
   @Override
   public void saveWeather(Meteorologic meteorologic) {
     meteorologicalDataRepository.save(mapMeterologicDomainToEntity(meteorologic));
+  }
+
+  @Override
+  public boolean existsWeather(Long id) {
+    return  meteorologicalDataRepository.existsById(id);
   }
 
   private MeteorologicalDataEntity mapMeterologicDomainToEntity(Meteorologic meteorologic){

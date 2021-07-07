@@ -13,12 +13,17 @@ public class WeatherPostController {
 
   private SaveWeatherService saveWeatherService;
 
-  public WeatherPostController(SaveWeatherService saveWeatherService){
-    this.saveWeatherService=saveWeatherService;
+  public WeatherPostController(SaveWeatherService saveWeatherService) {
+    this.saveWeatherService = saveWeatherService;
   }
+
   @PostMapping("/weather")
-  public ResponseEntity<Void> saveWeather(@RequestBody Meteorologic meteorologic){
-    saveWeatherService.saveWeather(meteorologic);
-    return  new ResponseEntity<>(HttpStatus.CREATED);
+  public ResponseEntity<Void> saveWeather(@RequestBody Meteorologic meteorologic) {
+    if (saveWeatherService.existsWeather(meteorologic.getId())) {
+      return new ResponseEntity<>(HttpStatus.CONFLICT);
+    } else {
+      saveWeatherService.saveWeather(meteorologic);
+      return new ResponseEntity<>(HttpStatus.CREATED);
+    }
   }
 }

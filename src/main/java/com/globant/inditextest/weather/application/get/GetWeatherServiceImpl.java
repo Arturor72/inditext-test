@@ -32,12 +32,18 @@ public class GetWeatherServiceImpl implements GetWeatherService {
 
   @Override
   public Set<Meteorologic> getMeteorologiucByDate(String date) {
-
     List<MeteorologicalDataEntity> meteorologicalDataEntityList = meteorologicalDataRepository
         .findByDate(LocalDate.parse(date));
     return meteorologicalDataEntityList.stream()
         .map(meteorologicalDataEntity -> mapEntityToDomain(meteorologicalDataEntity)).collect(
             Collectors.toSet());
+  }
+
+  @Override
+  public Meteorologic getMeteologicById(Long id) {
+    return meteorologicalDataRepository.findById(id)
+        .map(meteorologicalDataEntity -> mapEntityToDomain(meteorologicalDataEntity))
+        .orElseThrow(() -> new RuntimeException("Not found"));
   }
 
   private Meteorologic mapEntityToDomain(MeteorologicalDataEntity meteorologicalEntity) {

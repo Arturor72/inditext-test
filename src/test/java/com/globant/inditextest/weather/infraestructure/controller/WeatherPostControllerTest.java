@@ -59,6 +59,4 @@ class WeatherPostControllerTest {
     Assertions.assertTrue(response.getStatusCode()== HttpStatus.CREATED);
   }
 
-
-
 }

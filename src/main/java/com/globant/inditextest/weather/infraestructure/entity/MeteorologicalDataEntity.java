@@ -15,7 +15,6 @@ import javax.persistence.Table;
 public class MeteorologicalDataEntity {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @Column(name = "date")
   private LocalDate date;
