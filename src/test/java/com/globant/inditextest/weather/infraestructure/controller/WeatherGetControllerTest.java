@@ -38,10 +38,20 @@ class WeatherGetControllerTest {
 
   @Test
   public void getAllWeather() throws JsonProcessingException {
-    ResponseEntity<String> response =
+    ResponseEntity<Object[]> response =
         restTemplate.getForEntity(
             baseUrl,
-            String.class);
-    System.out.println(response.getBody());
+            Object[].class);
+    System.out.println(response.getBody().length==5);
+  }
+
+  @Test
+  public void getAllWeatherByDate() throws JsonProcessingException {
+    String date="2021-07-10";
+    ResponseEntity<Object[]> response =
+        restTemplate.getForEntity(
+            baseUrl.concat("?date=").concat(date),
+            Object[].class);
+    System.out.println(response.getBody().length==1);
   }
 }
