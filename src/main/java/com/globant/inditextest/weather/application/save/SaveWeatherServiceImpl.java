@@ -5,6 +5,8 @@ import com.globant.inditextest.weather.domain.Meteorologic;
 import com.globant.inditextest.weather.infraestructure.entity.LocationEntity;
 import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalDataEntity;
 import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,7 +27,7 @@ public class SaveWeatherServiceImpl implements SaveWeatherService{
     MeteorologicalDataEntity meteorologicalDataEntity=new MeteorologicalDataEntity();
     meteorologicalDataEntity.setId(meteorologic.getId());
     meteorologicalDataEntity.setDate(meteorologic.getDate());
-    meteorologicalDataEntity.setTemperature(meteorologic.getTemperature());
+    meteorologicalDataEntity.setTemperature(buildTemperatures(meteorologic.getTemperature()));
     meteorologicalDataEntity.setLocationEntity(mapLocationDomainToEntity(meteorologic.getLocation(),meteorologicalDataEntity));
     return meteorologicalDataEntity;
   }
@@ -38,5 +40,8 @@ public class SaveWeatherServiceImpl implements SaveWeatherService{
     locationEntity.setState(location.getState());
     locationEntity.setMeteorologicalDataEntity(meteorologicalDataEntity);
     return locationEntity;
+  }
+  private String buildTemperatures(List<Double> temperatures){
+    return temperatures.stream().map(temperature -> String.valueOf(temperature)).reduce((s, s1)-> s+"|"+s1).orElse("");
   }
 }

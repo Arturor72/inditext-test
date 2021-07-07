@@ -20,7 +20,7 @@ public class MeteorologicalDataEntity {
   @Column(name = "date")
   private LocalDate date;
   @Column(name = "temperature")
-  private Double temperature;
+  private String temperature;
 
   @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "meteorologicalDataEntity")
   private LocationEntity locationEntity;
@@ -41,11 +41,11 @@ public class MeteorologicalDataEntity {
     this.date = date;
   }
 
-  public Double getTemperature() {
+  public String getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(Double temperature) {
+  public void setTemperature(String temperature) {
     this.temperature = temperature;
   }
 

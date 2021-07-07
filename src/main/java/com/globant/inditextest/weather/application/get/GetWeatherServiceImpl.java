@@ -6,6 +6,7 @@ import com.globant.inditextest.weather.infraestructure.entity.LocationEntity;
 import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalDataEntity;
 import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -41,12 +42,17 @@ public class GetWeatherServiceImpl implements GetWeatherService {
 
   private Meteorologic mapEntityToDomain(MeteorologicalDataEntity meteorologicalEntity) {
     return new Meteorologic(meteorologicalEntity.getId(), meteorologicalEntity.getDate(),
-        meteorologicalEntity.getTemperature(),
+        buildTemperatures(meteorologicalEntity.getTemperature()),
         mapLocationEntityToDomain(meteorologicalEntity.getLocationEntity()));
   }
 
   private Location mapLocationEntityToDomain(LocationEntity locationEntity) {
     return new Location(locationEntity.getId(), locationEntity.getLat(), locationEntity.getLon(),
         locationEntity.getCity(), locationEntity.getState());
+  }
+
+  private List<Double> buildTemperatures(String temperatures) {
+    return Arrays.stream(temperatures.split("\\|")).map(Double::parseDouble)
+        .collect(Collectors.toList());
   }
 }

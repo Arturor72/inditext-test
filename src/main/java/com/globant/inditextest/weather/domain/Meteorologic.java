@@ -1,15 +1,16 @@
 package com.globant.inditextest.weather.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public final class Meteorologic {
 
   private Long id;
   private LocalDate date;
-  private Double temperature;
+  private List<Double> temperature;
   private Location location;
 
-  public Meteorologic(Long id, LocalDate date, Double temperature, Location location) {
+  public Meteorologic(Long id, LocalDate date, List<Double> temperature, Location location) {
     this.id = id;
     this.date = date;
     this.temperature = temperature;
@@ -24,7 +25,7 @@ public final class Meteorologic {
     return date;
   }
 
-  public Double getTemperature() {
+  public List<Double> getTemperature() {
     return temperature;
   }
 

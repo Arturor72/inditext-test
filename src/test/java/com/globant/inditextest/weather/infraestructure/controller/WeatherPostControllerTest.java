@@ -8,6 +8,8 @@ import com.globant.inditextest.weather.application.delete.DeleteWeatherService;
 import com.globant.inditextest.weather.domain.Location;
 import com.globant.inditextest.weather.domain.Meteorologic;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -49,7 +51,10 @@ class WeatherPostControllerTest {
   @Test
   public void saveWeather() throws JsonProcessingException {
     Location location=new Location(2L,12.3,12.4,"Del","Del" );
-    Meteorologic meteorologic=new Meteorologic(34L, LocalDate.now(), 13.5, location);
+    List<Double> temperatures=new ArrayList<>();
+    temperatures.add(13.4);
+    temperatures.add(16.9);
+    Meteorologic meteorologic=new Meteorologic(34L, LocalDate.now(), temperatures, location);
     ResponseEntity<Void> response=restTemplate.postForEntity(baseUrl,  meteorologic, Void.class);
     Assertions.assertTrue(response.getStatusCode()== HttpStatus.CREATED);
   }
