@@ -1,10 +1,6 @@
 package com.globant.inditextest.weather.infraestructure.controller;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.globant.inditextest.weather.domain.Meteorologic;
-import jdk.nashorn.internal.parser.JSONParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,16 +38,16 @@ class WeatherGetControllerTest {
         restTemplate.getForEntity(
             baseUrl,
             Object[].class);
-    System.out.println(response.getBody().length==5);
+    Assertions.assertTrue(response.getBody().length == 5);
   }
 
   @Test
   public void getAllWeatherByDate() throws JsonProcessingException {
-    String date="2021-07-10";
+    String date = "2021-07-10";
     ResponseEntity<Object[]> response =
         restTemplate.getForEntity(
             baseUrl.concat("?date=").concat(date),
             Object[].class);
-    System.out.println(response.getBody().length==1);
+    Assertions.assertTrue(response.getBody().length == 1);
   }
 }
