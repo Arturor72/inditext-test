@@ -1,4 +1,4 @@
-package com.globant.inditextest.meteorologic.application.delete;
+package com.globant.inditextest.weather.application.delete;
 
 public interface DeleteWeatherService {
 

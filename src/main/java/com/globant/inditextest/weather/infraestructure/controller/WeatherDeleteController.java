@@ -1,6 +1,6 @@
-package com.globant.inditextest.meteorologic.infraestructure.controller;
+package com.globant.inditextest.weather.infraestructure.controller;
 
-import com.globant.inditextest.meteorologic.application.delete.DeleteWeatherService;
+import com.globant.inditextest.weather.application.delete.DeleteWeatherService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

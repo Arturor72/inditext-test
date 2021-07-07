@@ -1,6 +1,6 @@
-package com.globant.inditextest.meteorologic.application.save;
+package com.globant.inditextest.weather.application.save;
 
-import com.globant.inditextest.meteorologic.domain.Meteorologic;
+import com.globant.inditextest.weather.domain.Meteorologic;
 
 public interface SaveWeatherService {
 

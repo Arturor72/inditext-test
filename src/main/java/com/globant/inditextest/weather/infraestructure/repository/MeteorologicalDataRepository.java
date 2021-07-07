@@ -1,6 +1,6 @@
-package com.globant.inditextest.meteorologic.infraestructure.repository;
+package com.globant.inditextest.weather.infraestructure.repository;
 
-import com.globant.inditextest.meteorologic.infraestructure.entity.MeteorologicalDataEntity;
+import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalDataEntity;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

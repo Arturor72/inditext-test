@@ -1,8 +1,7 @@
-package com.globant.inditextest.meteorologic.infraestructure.controller;
+package com.globant.inditextest.weather.infraestructure.controller;
 
-import com.globant.inditextest.meteorologic.application.get.GetWeatherService;
-import com.globant.inditextest.meteorologic.domain.Meteorologic;
-import java.time.LocalDate;
+import com.globant.inditextest.weather.application.get.GetWeatherService;
+import com.globant.inditextest.weather.domain.Meteorologic;
 import java.util.Set;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

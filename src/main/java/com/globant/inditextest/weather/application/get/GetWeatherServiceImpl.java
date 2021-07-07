@@ -1,10 +1,10 @@
-package com.globant.inditextest.meteorologic.application.get;
+package com.globant.inditextest.weather.application.get;
 
-import com.globant.inditextest.meteorologic.domain.Location;
-import com.globant.inditextest.meteorologic.domain.Meteorologic;
-import com.globant.inditextest.meteorologic.infraestructure.entity.LocationEntity;
-import com.globant.inditextest.meteorologic.infraestructure.entity.MeteorologicalDataEntity;
-import com.globant.inditextest.meteorologic.infraestructure.repository.MeteorologicalDataRepository;
+import com.globant.inditextest.weather.domain.Location;
+import com.globant.inditextest.weather.domain.Meteorologic;
+import com.globant.inditextest.weather.infraestructure.entity.LocationEntity;
+import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalDataEntity;
+import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;

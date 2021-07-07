@@ -1,6 +1,6 @@
-package com.globant.inditextest.meteorologic.domain;
+package com.globant.inditextest.weather.domain;
 
-public class Location {
+public final class Location {
 
   private Long id;
   private Double lat;

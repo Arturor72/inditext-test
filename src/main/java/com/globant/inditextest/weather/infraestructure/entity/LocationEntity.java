@@ -1,4 +1,4 @@
-package com.globant.inditextest.meteorologic.infraestructure.entity;
+package com.globant.inditextest.weather.infraestructure.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

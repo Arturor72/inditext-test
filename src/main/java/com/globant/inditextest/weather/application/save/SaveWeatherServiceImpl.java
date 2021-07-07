@@ -1,12 +1,10 @@
-package com.globant.inditextest.meteorologic.application.save;
+package com.globant.inditextest.weather.application.save;
 
-import com.globant.inditextest.meteorologic.domain.Location;
-import com.globant.inditextest.meteorologic.domain.Meteorologic;
-import com.globant.inditextest.meteorologic.infraestructure.entity.LocationEntity;
-import com.globant.inditextest.meteorologic.infraestructure.entity.MeteorologicalDataEntity;
-import com.globant.inditextest.meteorologic.infraestructure.repository.MeteorologicalDataRepository;
-import java.util.Set;
-import java.util.stream.Collectors;
+import com.globant.inditextest.weather.domain.Location;
+import com.globant.inditextest.weather.domain.Meteorologic;
+import com.globant.inditextest.weather.infraestructure.entity.LocationEntity;
+import com.globant.inditextest.weather.infraestructure.entity.MeteorologicalDataEntity;
+import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
 import org.springframework.stereotype.Service;
 
 @Service

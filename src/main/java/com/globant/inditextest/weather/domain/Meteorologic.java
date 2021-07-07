@@ -1,4 +1,4 @@
-package com.globant.inditextest.meteorologic.domain;
+package com.globant.inditextest.weather.domain;
 
 import java.time.LocalDate;
 

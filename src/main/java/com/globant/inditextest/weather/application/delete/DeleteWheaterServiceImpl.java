@@ -1,6 +1,6 @@
-package com.globant.inditextest.meteorologic.application.delete;
+package com.globant.inditextest.weather.application.delete;
 
-import com.globant.inditextest.meteorologic.infraestructure.repository.MeteorologicalDataRepository;
+import com.globant.inditextest.weather.infraestructure.repository.MeteorologicalDataRepository;
 import org.springframework.stereotype.Service;
 
 @Service
